@@ -1,0 +1,13 @@
+{
+    "name": "rogervila/cosmicjs-php",
+    "description": "Based on https://github.com/cosmicjs/cosmicjs-php but with composer",
+    "type": "composer-plugin",
+    "license": "None",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Rogervila\\CosmicJS\\": "src/Rogervila/CosmicJS"
+        }
+    }
+}
