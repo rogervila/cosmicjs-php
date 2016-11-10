@@ -12,16 +12,16 @@ class Api
      */
     public function get($url)
     {
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($curl);
 
-        if (curl_getinfo($ch)['http_code'] === 404) {
+        if (curl_getinfo($curl)['http_code'] === 404) {
             throw new \Exception(json_encode($response), 404);
         }
 
-        curl_close($ch);
+        curl_close($curl);
 
         return $response;
     }
@@ -37,24 +37,24 @@ class Api
     {
         $object_string = $parameters->toJson();
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $object_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $object_string);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($object_string)
             ]
         );
 
-        $response = curl_exec($ch);
+        $response = curl_exec($curl);
 
-        if (curl_getinfo($ch)['http_code'] === 404) {
+        if (curl_getinfo($curl)['http_code'] === 404) {
             throw new \Exception(json_encode($response), 404);
         }
 
-        curl_close($ch);
+        curl_close($curl);
 
         return $response;
 
@@ -71,24 +71,24 @@ class Api
     {
         $object_string = $parameters->toJson();
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $object_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $object_string);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($object_string)
             ]
         );
 
-        $response = curl_exec($ch);
+        $response = curl_exec($curl);
 
-        if (curl_getinfo($ch)['http_code'] === 404) {
+        if (curl_getinfo($curl)['http_code'] === 404) {
             throw new \Exception(json_encode($response), 404);
         }
 
-        curl_close($ch);
+        curl_close($curl);
 
         return $response;
 
@@ -105,24 +105,24 @@ class Api
     {
         $object_string = $parameters->toJson();
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $object_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $object_string);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($object_string)
             ]
         );
 
-        $response = curl_exec($ch);
+        $response = curl_exec($curl);
 
-        if (curl_getinfo($ch)['http_code'] === 404) {
+        if (curl_getinfo($curl)['http_code'] === 404) {
             throw new \Exception(json_encode($response), 404);
         }
 
-        curl_close($ch);
+        curl_close($curl);
 
         return $response;
     }
