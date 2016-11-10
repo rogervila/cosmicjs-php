@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/rogervila/cosmicjs-php/badges/gpa.svg)](https://codeclimate.com/github/rogervila/cosmicjs-php)
 [![Issue Count](https://codeclimate.com/github/rogervila/cosmicjs-php/badges/issue_count.svg)](https://codeclimate.com/github/rogervila/cosmicjs-php)
 [![Test Coverage](https://codeclimate.com/github/rogervila/cosmicjs-php/badges/coverage.svg)](https://codeclimate.com/github/rogervila/cosmicjs-php/coverage)
-
+[![Build Status](https://travis-ci.org/rogervila/cosmicjs-php.svg?branch=master)](https://travis-ci.org/rogervila/cosmicjs-php)
 
 Based on https://github.com/cosmicjs/cosmicjs-php but with composer and OOP.
 
