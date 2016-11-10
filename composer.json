@@ -1,13 +1,21 @@
 {
-    "name": "rogervila/cosmicjs-php",
-    "description": "Based on https://github.com/cosmicjs/cosmicjs-php but with composer and OOP.",
-    "version":"1.0.0",
-    "keywords": ["cosmicjs", "cosmicjs-php","api cms"],
-    "license": "None",
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-            "Rogervila\\CosmicJS\\": "src/Rogervila/CosmicJS"
-        }
+  "name": "rogervila/cosmicjs-php",
+  "description": "Based on https://github.com/cosmicjs/cosmicjs-php but with composer and OOP.",
+  "version": "1.0.0",
+  "keywords": [
+    "cosmicjs",
+    "cosmicjs-php",
+    "api",
+    "cms"
+  ],
+  "license": "None",
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Rogervila\\CosmicJS\\": "src/Rogervila/CosmicJS"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6"
+  }
 }
