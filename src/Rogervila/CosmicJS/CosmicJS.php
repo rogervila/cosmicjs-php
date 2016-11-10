@@ -12,17 +12,17 @@ class CosmicJS
     /**
      * @var string
      */
-    private $bucket_slug;
+    private $bucketSlug;
 
     /**
      * @var string
      */
-    private $read_key;
+    private $readKey;
 
     /**
      * @var string
      */
-    private $write_key;
+    private $writeKey;
 
     /**
      * @var string
@@ -32,27 +32,27 @@ class CosmicJS
     /**
      * @var string
      */
-    private $objects_url;
+    private $objectsUrl;
 
     /**
      * @var string
      */
-    private $media_url;
+    private $mediaUrl;
 
     /**
      * @var string
      */
-    private $add_object_url;
+    private $addObjectUrl;
 
     /**
      * @var string
      */
-    private $edit_object_url;
+    private $editObjectUrl;
 
     /**
      * @var string
      */
-    private $delete_object_url;
+    private $deleteObjectUrl;
 
     /**
      * CosmicJS constructor.
@@ -63,16 +63,16 @@ class CosmicJS
     {
         $this->api = new Api();
 
-        $this->bucket_slug = $config->getBucketSlug();
-        $this->read_key    = $config->getReadKey();
-        $this->write_key   = $config->getWriteKey();
+        $this->bucketSlug = $config->getBucketSlug();
+        $this->readKey    = $config->getReadKey();
+        $this->writeKey   = $config->getWriteKey();
 
-        $this->url               = "https://api.cosmicjs.com/v1/" . $this->bucket_slug;
-        $this->objects_url       = $this->url . "/objects?read_key=" . $this->read_key;
-        $this->media_url         = $this->url . "/media?read_key=" . $this->read_key;
-        $this->add_object_url    = $this->url . "/add-object?write_key=" . $this->write_key;
-        $this->edit_object_url   = $this->url . "/edit-object?write_key=" . $this->write_key;
-        $this->delete_object_url = $this->url . "/delete-object?write_key=" . $this->write_key;
+        $this->url             = "https://api.cosmicjs.com/v1/" . $this->bucketSlug;
+        $this->objectsUrl      = $this->url . "/objects?read_key=" . $this->readKey;
+        $this->mediaUrl        = $this->url . "/media?read_key=" . $this->readKey;
+        $this->addObjectUrl    = $this->url . "/add-object?write_key=" . $this->writeKey;
+        $this->editObjectUrl   = $this->url . "/edit-object?write_key=" . $this->writeKey;
+        $this->deleteObjectUrl = $this->url . "/delete-object?write_key=" . $this->writeKey;
     }
 
     /**
@@ -81,7 +81,7 @@ class CosmicJS
     public function getBucket()
     {
         try {
-            $response = $this->api->get($this->url . "?read_key=" . $this->read_key);
+            $response = $this->api->get($this->url . "?read_key=" . $this->readKey);
         } catch (\Exception $e) {
             $response = $e;
         }
@@ -96,7 +96,7 @@ class CosmicJS
     public function getObjects()
     {
         try {
-            $response = $this->api->get($this->objects_url);
+            $response = $this->api->get($this->objectsUrl);
         } catch (\Exception $e) {
             $response = $e;
         }
@@ -112,7 +112,7 @@ class CosmicJS
     public function getObject($slug)
     {
         try {
-            $response = $this->api->get($this->url . "/object/" . $slug . "?read_key=" . $this->read_key);
+            $response = $this->api->get($this->url . "/object/" . $slug . "?read_key=" . $this->readKey);
         } catch (\Exception $e) {
             $response = $e;
         }
@@ -126,7 +126,7 @@ class CosmicJS
     public function getMedia()
     {
         try {
-            $response = $this->api->get($this->media_url);
+            $response = $this->api->get($this->mediaUrl);
         } catch (\Exception $e) {
             $response = $e;
         }
@@ -142,7 +142,7 @@ class CosmicJS
     public function addObject(Parameters $parameters)
     {
         try {
-            $response = $this->api->post($this->add_object_url, $parameters);
+            $response = $this->api->post($this->addObjectUrl, $parameters);
         } catch (\Exception $e) {
             $response = $e;
         }
@@ -158,7 +158,7 @@ class CosmicJS
     public function editObject(Parameters $parameters)
     {
         try {
-            $response = $this->api->put($this->edit_object_url, $parameters);
+            $response = $this->api->put($this->editObjectUrl, $parameters);
         } catch (\Exception $e) {
             $response = $e;
         }
@@ -174,7 +174,7 @@ class CosmicJS
     public function deleteObject(Parameters $parameters)
     {
         try {
-            $response = $this->api->delete($this->delete_object_url, $parameters);
+            $response = $this->api->delete($this->deleteObjectUrl, $parameters);
         } catch (\Exception $e) {
             $response = $e;
         }

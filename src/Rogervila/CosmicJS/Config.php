@@ -8,34 +8,34 @@ class Config
     /**
      * @var string
      */
-    private $bucket_slug;
+    private $bucketSlug;
 
     /**
      * @var string
      */
-    private $read_key;
+    private $readKey;
 
     /**
      * @var string
      */
-    private $write_key;
+    private $writeKey;
 
     /**
      * @return string
      */
     public function getBucketSlug()
     {
-        return $this->bucket_slug;
+        return $this->bucketSlug;
     }
 
     /**
-     * @param string $bucket_slug
+     * @param string $bucketSlug
      *
      * @return Config
      */
-    public function setBucketSlug($bucket_slug)
+    public function setBucketSlug($bucketSlug)
     {
-        $this->bucket_slug = $bucket_slug;
+        $this->bucketSlug = $bucketSlug;
 
         return $this;
     }
@@ -45,17 +45,17 @@ class Config
      */
     public function getReadKey()
     {
-        return $this->read_key;
+        return $this->readKey;
     }
 
     /**
-     * @param string $read_key
+     * @param string $readKey
      *
      * @return Config
      */
-    public function setReadKey($read_key)
+    public function setReadKey($readKey)
     {
-        $this->read_key = $read_key;
+        $this->readKey = $readKey;
 
         return $this;
     }
@@ -65,17 +65,17 @@ class Config
      */
     public function getWriteKey()
     {
-        return $this->write_key;
+        return $this->writeKey;
     }
 
     /**
-     * @param string $write_key
+     * @param string $writeKey
      *
      * @return Config
      */
-    public function setWriteKey($write_key)
+    public function setWriteKey($writeKey)
     {
-        $this->write_key = $write_key;
+        $this->writeKey = $writeKey;
 
         return $this;
     }
