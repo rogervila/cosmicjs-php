@@ -35,16 +35,16 @@ class Api
      */
     public function post($url, Parameters $parameters)
     {
-        $object_string = $parameters->toJson();
+        $jsonParameters = $parameters->toJson();
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $object_string);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonParameters);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($object_string)
+                'Content-Length: ' . strlen($jsonParameters)
             ]
         );
 
@@ -69,16 +69,16 @@ class Api
      */
     public function put($url, Parameters $parameters)
     {
-        $object_string = $parameters->toJson();
+        $jsonParameters = $parameters->toJson();
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $object_string);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonParameters);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($object_string)
+                'Content-Length: ' . strlen($jsonParameters)
             ]
         );
 
@@ -103,16 +103,16 @@ class Api
      */
     public function delete($url, Parameters $parameters)
     {
-        $object_string = $parameters->toJson();
+        $jsonParameters = $parameters->toJson();
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $object_string);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonParameters);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($object_string)
+                'Content-Length: ' . strlen($jsonParameters)
             ]
         );
 
