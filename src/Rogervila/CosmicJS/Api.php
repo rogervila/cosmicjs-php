@@ -57,7 +57,6 @@ class Api
         curl_close($curl);
 
         return $response;
-
     }
 
     /**
@@ -91,7 +90,6 @@ class Api
         curl_close($curl);
 
         return $response;
-
     }
 
     /**
