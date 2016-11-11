@@ -59,7 +59,7 @@ class CosmicJS
      *
      * @param Config $config
      */
-    function __construct(Config $config)
+    public function __construct(Config $config)
     {
         $this->api = new Api();
 
