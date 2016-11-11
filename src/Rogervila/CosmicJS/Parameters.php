@@ -2,7 +2,8 @@
 
 namespace Rogervila\CosmicJS;
 
-class Parameters {
+class Parameters
+{
 
     /**
      * @var string
