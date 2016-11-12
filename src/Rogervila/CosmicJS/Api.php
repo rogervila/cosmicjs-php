@@ -35,16 +35,16 @@ class Api
      */
     public function post($url, Parameters $parameters)
     {
-        $jsonParameters = $parameters->toJson();
+        $postParameters = $parameters->toJson();
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonParameters);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $postParameters);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($jsonParameters)
+                'Content-Length: ' . strlen($postParameters)
             ]
         );
 
@@ -68,16 +68,16 @@ class Api
      */
     public function put($url, Parameters $parameters)
     {
-        $jsonParameters = $parameters->toJson();
+        $putParameters = $parameters->toJson();
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonParameters);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $putParameters);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($jsonParameters)
+                'Content-Length: ' . strlen($putParameters)
             ]
         );
 
@@ -101,16 +101,16 @@ class Api
      */
     public function delete($url, Parameters $parameters)
     {
-        $jsonParameters = $parameters->toJson();
+        $deleteParameters = $parameters->toJson();
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonParameters);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $deleteParameters);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($jsonParameters)
+                'Content-Length: ' . strlen($deleteParameters)
             ]
         );
 
