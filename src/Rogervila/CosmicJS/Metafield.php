@@ -4,7 +4,6 @@ namespace Rogervila\CosmicJS;
 
 class Metafield
 {
-
     /**
      * @var string
      */
