@@ -4,7 +4,6 @@ namespace Rogervila\CosmicJS;
 
 class Parameters
 {
-
     /**
      * @var string
      */
@@ -13,7 +12,7 @@ class Parameters
     /**
      * @var string
      */
-    public $type_slug;
+    public $typeSlug;
 
     /**
      * An array of Rogervila\CosmicJS\Metafield objects
@@ -25,7 +24,7 @@ class Parameters
     /**
      * @var string
      */
-    private $write_key;
+    private $writeKey;
 
     /**
      * Parameters constructor.
@@ -34,7 +33,7 @@ class Parameters
      */
     public function __construct(Config $config)
     {
-        $this->write_key = $config->getWriteKey();
+        $this->writeKey = $config->getWriteKey();
     }
 
     /**
