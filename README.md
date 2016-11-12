@@ -5,6 +5,8 @@
 [![Test Coverage](https://codeclimate.com/github/rogervila/cosmicjs-php/badges/coverage.svg)](https://codeclimate.com/github/rogervila/cosmicjs-php/coverage)
 [![Build Status](https://travis-ci.org/rogervila/cosmicjs-php.svg?branch=master)](https://travis-ci.org/rogervila/cosmicjs-php)
 [![StyleCI](https://styleci.io/repos/69678246/shield)](https://styleci.io/repos/69678246)
+[![Latest Stable Version](https://poser.pugx.org/rogervila/cosmicjs-php/v/stable)](https://packagist.org/packages/rogervila/cosmicjs-php)
+[![Total Downloads](https://poser.pugx.org/rogervila/cosmicjs-php/downloads)](https://packagist.org/packages/rogervila/cosmicjs-php)
 
 Based on https://github.com/cosmicjs/cosmicjs-php but with composer and OOP.
 
@@ -44,7 +46,7 @@ $cosmic->getMedia();
 
 // object parameters
 $parameters = new \Rogervila\CosmicJS\Parameters($config);
-$parameters->type_slug = 'my-object';
+$parameters->typeSlug = 'my-object';
 $parameters->title = 'My Object';
 
 // add metafields
@@ -76,4 +78,5 @@ $cosmic->editObject($parameters);
 ```
 
 ## TODOS
- - Tests
+ - More tests
+ - Move from Curl to Guzzle
